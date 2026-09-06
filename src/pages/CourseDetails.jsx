@@ -1,0 +1,4 @@
+export default function CourseDetails({ course, onStart, onClose }) {
+	if (!course) return null
+	return <div className="modal-backdrop"><article className="modal course-modal"><button className="modal-close" onClick={onClose} aria-label="Close course details">×</button><div className={`modal-art course-art ${course.color}`}><span>{course.icon}</span></div><div className="modal-content"><div className="tile-meta"><span>{course.category} · {course.level}</span><span>★ {course.rating}</span></div><h2>{course.title}</h2><p>{course.description}</p><div className="modal-facts"><span><b>{course.lessons}</b> lessons</span><span><b>{course.length}</b> total time</span><span><b>Certificate</b> included</span></div><button className="primary-button" onClick={() => onStart?.(course)}>Start learning <span>→</span></button></div></article></div>
+}

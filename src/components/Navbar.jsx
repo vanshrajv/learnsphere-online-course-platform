@@ -1,0 +1,3 @@
+export default function Navbar({ query = '', onQueryChange, onNotify, onProfile }) {
+	return <header className="topbar"><div className="breadcrumb"><span>Workspace</span><b>/</b><strong>Overview</strong></div><div className="top-actions"><label className="search"><span>⌕</span><input value={query} onChange={(event) => onQueryChange?.(event.target.value)} placeholder="Search your courses" aria-label="Search your courses" /><kbd>⌘ K</kbd></label><button className="notification" onClick={onNotify} aria-label="View notifications">♢<i /></button><button className="top-avatar" onClick={onProfile}>VR</button></div></header>
+}
